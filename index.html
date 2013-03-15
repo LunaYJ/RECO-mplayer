@@ -4,7 +4,7 @@
 <meta charset=utf-8 />
 
 <!-- Website Design By: www.happyworm.com -->
-<title>jPlayer音频播放器</title>
+<title>jPlayer带播放列表的视频播放器</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
 <!--[if lt IE 9]>
@@ -15,10 +15,13 @@
 <link href="ie/ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 
-<link href="skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+<link href="skin/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
+<link href="skin/player1.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js">
 </script>
 <script type="text/javascript" src="jquery.jplayer.min.js">
+</script>
+<script type="text/javascript" src="add-on/jplayer.playlist.min.js">
 </script>
 <script type="text/javascript" src="add-on/jquery.jplayer.inspector.js">
 </script>
@@ -27,160 +30,537 @@
 //<![CDATA[
 $(document).ready(function() {
     
-    $("#jquery_jplayer_1").jPlayer({
-        ready: function(event) {
-            $(this).jPlayer("setMedia", {
-                mp3:"song/bye-bye-beautiful.mp3"
-            });
-        },
+    var myPlaylist = new jPlayerPlaylist({
+        jPlayer: "#jquery_jplayer_1",
+        //cssSelectorAncestor: "#jp_container_1"
+    }, 
+    [
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "song1",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "Bye Bye Beautiful343",
+            artist: "NightWish",
+            mp3: "song/bye-bye-beautiful.mp3",
+            album: "Dark Passion Play",
+            //poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        }, 
+        {
+            title: "song2",
+            artist: "unknown",
+            //free: true,
+            mp3: "song/1.mp3",
+            album: "unknown",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        }, 
+        
+    ], 
+    {
+    	playlistOptions: {
+	    	enableRemoveControls: true
+    	},
         //swfPath: "../js",
         supplied: "mp3",
-        wmode: "window"
+        //wmode: "window"
     });
+    //单曲循环
+    $(".jp-repeatone").click(function(){
+		$(this).css('display','none');
+		$(".jp-repeatone-off").css('display','block');
+		var r = $(".jp-repeat").css('display');
+		if(r == 'block'){
+		$(".jp-repeat").click();}else{$(".jp-repeat-off").click();$(".jp-repeat").click();};
+	});
+    $(myPlaylist.cssSelector.jPlayer).bind($.jPlayer.event.repeat + ".jPlayer", function(event) {
+    var d = $(".jp-repeatone").css('display');
+	 if(event.jPlayer.options.loop && d == "none") {
+		$(this).unbind(".jPlayerRepeat").bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
+			var index=myPlaylist.current-1 >= 0 ? myPlaylist.current-1 : 0; 
+			myPlaylist.play(index);
+		});
+	  } else {
+		$(this).unbind(".jPlayerRepeat");
+	  }
+	});
+	
+	/*
+$(".jp-repeatone").click(function(){
+		$(this).css('display','none');
+		$(".jp-repeatone-off").css('display','block');
+		$(myPlaylist.cssSelector.jPlayer).unbind($.jPlayer.event.repeat + ".jPlayer");
+		$(myPlaylist.cssSelector.jPlayer).bind($.jPlayer.event.ended,function(event){myPlaylist.next();myPlaylist.previous()});
+	});
+*/
 
 });
 //]]>
 </script>
 <script type="text/javascript">
+$(function(){
+	
+	$('.listTab tr').live('click', function(){
+		$(this).find('.jp-playlist-item').click();
+	});
+	$('.liDel').live("click",function(){
+		$(this).parent().animate({height:"0"},function(){
+			$(this).remove();
+		});
+	});
+	$('.liEdit').live('click', function(){
+		$(this).parent().parent().find('a').css('display','none');
+		$(this).parent().parent().find('input').css('display','inline-block');
+	});
+	$('.my_list li input:button').live('click', function(){
+		$(this).parent().find('input').css('display','none');
+		$(this).parent().find('.listName').css('display','block');
+		$(this).parent().find('.liEdit').removeAttr('style');
+		$(this).parent().find('.liDel').removeAttr('style');
+	});
 
-(function() {
-    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-    t.parentNode.insertBefore(s, t);
-})();
+	$('.my_list li input:text').live('change', function(){
+		var v = $(this).val();
+		var txt = $(this).parent().find('.listName');
+		txt.html(v);
+	});
+	$('.add_list a').click(function(){
+		$('.my_list ul').append("<li><div><a class='listName' href='javascript:;' style='display:none;'>新建播放列表</a><a class='liEdit' href='javascript:;' title='编辑' >编辑</a><a class='liDel' title='删除' href='javascript:;' >删除</a></div> <input type='text' value='新建播放列表'  style='display:inline-block;' /><input type='button' value='确定' style='display:inline-block;' /></li>");
+	});
+	
+	//获取歌曲数量
+	setTimeout(function(){
+		var a = $('.listTab tr').parent().find('tr');
+		$('.count').html(a.length);
+	}, 3000);
+	$('.l_remove').live('click',function(){
+		setTimeout(function(){
+			var a = $('.listTab tr').size();
+			$(".count").html(a);
+		}, 500)
+		
+	})
+	
+	
+	
+	//窗口尺寸 start
+	var H = $(window).height();
+	var h = H - $('.searchArea').height() - $('.jp-gui').height() - $('.listTitle').height() - $('.song_footer').height()-10;
+	var mainH =  H - $('.searchArea').height() - $('.jp-gui').height();
+	//alert(h);
+	$('.main').height(mainH);
+	$('.listTabWrap').height(h);
+	$(window).resize(function(){
+		var H = $(window).height();
+		var h = H - $('.searchArea').height() - $('.jp-gui').height() - $('.listTitle').height() - $('.song_footer').height()-10;
+		var mainH =  H - $('.searchArea').height() - $('.jp-gui').height();
+		//alert(h);
+		$('.main').height(mainH);
+		$('.listTabWrap').height(h);
+	});
+	
+	var W = $(window).width();
+	var w = W - $('.jp-controls').width() - $('.jp-volume-bar').width() - $('.albumPhoto').width() - $('.jp-current-time').width() - $('.jp-duration').width() - $('.jp-toggles').width();
+	$('.jp-progress').width(w - 100);
+	$(window).resize(function(){
+		var W = $(window).width();
+		var w = W - $('.jp-controls').width() - $('.jp-volume-bar').width() - $('.albumPhoto').width() - $('.jp-current-time').width() - $('.jp-duration').width() - $('.jp-toggles').width();
+		$('.jp-progress').width(w - 100);
+	});
+	//窗口尺寸 end
+	
+
+	$(".jp-repeatone-off").click(function(){
+		$(this).css('display','none')
+		$(".jp-repeatone").css('display','block');
+		$(".jp-repeat-off").click();
+	});
+})
+</script>
+<script type="text/javascript" language="javascript">
+	//全选
+	function selectAll()
+	{
+		var a = $("input:checkbox");
+		for (var i=0; i<a.length; i++)
+			if (a[i].type == "checkbox") a[i].checked = true;
+	}
+	//反选
+	function selectOthers()
+	{
+		var a = $("input:checkbox");
+		for(var i=0; i<a.length; i++)
+			if(a[i].type == "checkbox") a[i].checked =!a[i].checked;
+	} 
+	//checkbox点击不播放音乐
+	function noPlay (obj,evt) {
+		var e=(evt)?evt:window.event;
+		if (window.event) {
+			e.cancelBubble=true;
+		} else {
+			e.stopPropagation();
+		}
+	}
+	
+
 </script>
 
-</head>
 
-<body class="demo" onload="prettyPrint();">
+
+</head>
+<body class="demo">
 <div id="container">
 
 	
 	
 	<div id="content_main">
-	
+
+		
 		<section>
-			
-		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 
-		<div id="jp_container_1" class="jp-audio" style="margin:10px auto">
-			<div class="jp-type-single">
-				<div class="jp-gui jp-interface">
-					<ul class="jp-controls">
-						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-
-						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-						<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-						<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-					</ul>
-
-					<div class="jp-progress">
-						<div class="jp-seek-bar">
-							<div class="jp-play-bar"></div>
-
+		<div id="jp_container_1" class="jp-video jp-video-270p" style="margin:10px auto">
+			<div class="jp-type-playlist">
+				<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+				<div class="searchArea clearfix">
+					<h1 class="logo"> </h1>
+					<div class="searchbar">
+						<input type="text" value="" name="search" />
+						<a href="javascript:;">提交</a>
+					</div>
+					<div class="userbar">
+						<a href="javascript:;">userName</a> | 
+						<a href="javascript:;">登出</a>
+					</div>
+				</div>
+				<div class="main clearfix">
+					<div class="leftBar">
+						<div class="temp_list">
+							<a href="javascript:void(0);">临时播放列表</a>
+						</div>
+						<div class="my_favor">
+							<a href="javascript:void(0);">我的最爱</a>
+						</div>
+						<div class="recent_song">
+							<a href="javascript:;">最近播放的歌曲</a>
+						</div>
+						<div class="my_list">
+							<ul>
+								<li class="selected">
+									<div>
+									<a href="javascript:;" class="listName">未命名播放列表</a><a class="liEdit" title="编辑" href="javascript:;">编辑</a><a href="javascript:;" class="liDel" title="删除">删除</a>
+									</div>
+									<input type="text" value="未命名播放列表" /><input type="button" value="确定" />
+								</li>
+								<li>
+									<div>
+									<a href="javascript:;" class="listName">未命名播放列表2</a><a class="liEdit" title="编辑" href="javascript:;">编辑</a><a href="javascript:;" class="liDel" title="删除">删除</a>
+									</div>
+									<input type="text" value="未命名播放列表2" /><input type="button" value="确定" />
+								</li>
+							</ul>
+							<div class="add_list">
+								<a href="javascript:;" title="新建播放列表">新建</a>
+							</div>
 						</div>
 					</div>
-					<div class="jp-volume-bar">
-						<div class="jp-volume-bar-value"></div>
+					<div class="jp-playlist">
+						<table class="listTitle">
+							<tr>
+								<th width="35%">歌名</th>
+								<th width="25%">表演者</th>
+								<th width="40%">专辑</th>
+							</tr>
+						</table>
+						<div class="listTabWrap">
+							<table class="listTab">
+								<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+									<tr></tr>
+							</table>
+						</div>
+						<div class="song_footer">
+							<div class="f1">
+								<a id="selectAll" href="javascript:selectAll();">全选</a>
+								<a id="selectOthers" href="javascript:selectOthers();">反选</a>
+								<a class="addtolist" href="javascript:;">加入播放列表</a>
+								<a class="dellist" href="javascript:;">删除</a>
+							</div>
+							
+							<p>共有<span class="count"> </span>首歌</p>
+						</div>
+					</div>
+				</div>
+				<div class="jp-gui">
+					<div class="jp-video-play">
+						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+
+					</div>
+					<div class="jp-interface">
+						
+
+						
+						<div class="jp-controls-holder">
+							<ul class="jp-controls">
+								<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+
+								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+								<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+<!-- 								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li> -->
+<!-- 								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li> -->
+<!-- 								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li> -->
+
+<!-- 								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li> -->
+							</ul>
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-value"></div>
+<!-- 								<span class="volume_control " title="音量调节" href="javascript:;"></span> -->
+							</div>
+							
+							<div class="albumPhoto">
+								<a href="javascript:;"><img src="images/songer.jpg" alt="singer" width="44" height="45" /></a>
+							</div>
+							<div class="inline">
+								<div class="jp-title clearfix">
+									<ul class="titleInfo">
+										<li id="marquee"><marquee scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();"></marquee></li>
+										<li id="addplay"><a class="addplay" href="javascript:;" title="添加到播放列表">添加到播放列表</a></li>
+										<li id="addfav"><a class="addfav" href="javascript:;" title="添加收藏夹">添加收藏夹</a></li>
+										<li id="add"><a class="add" href="javascript:;" title="添加">添加</a></li>
+									</ul>
+									<a href="javascript:;" class="checkAlbumInfo">查看专辑信息</a>
+									
+								</div>
+								<div class="jp-current-time"></div>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div class="jp-duration"></div>
+								<ul class="jp-toggles">
+									<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="列表循环开">列表循环开</a></li>
+									<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="列表循环关">列表循环关</a></li>
+									<li><a href="javascript:;" class="jp-repeatone" tabindex="1" title="单曲循环开">单曲循环开</a></li>
+									<li><a href="javascript:;" class="jp-repeatone-off" tabindex="1" title="单曲循环关">单曲循环关</a></li>
+									<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="随意播放开">随意播放开</a></li>
+									<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="随机播放关">随机播放关</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 
-					<div class="jp-current-time"></div>
-					<div class="jp-duration"></div>
-					<ul class="jp-toggles">
-						<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-						<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-					</ul>
 				</div>
-				<div class="jp-title">
-
-					<ul>
-						<li>Cro Magnon Man</li>
-					</ul>
-				</div>
+				
 				<div class="jp-no-solution">
 					<span>Update Required</span>
+
 					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
 				</div>
-
 			</div>
 		</div>
+
 		</section>
 	</div>
-
 	
 </div>
 
-<div style="width:640px;margin:20px auto 20px auto; padding:20px 0 0 320px;overflow:hidden">
-<!-- JiaThis Button BEGIN -->
-<div id="jiathis_style_32x32">
-	<a class="jiathis_button_qzone"></a>
-	<a class="jiathis_button_tsina"></a>
-	<a class="jiathis_button_tqq"></a>
-	<a class="jiathis_button_renren"></a>
-	<a class="jiathis_button_kaixin001"></a>
-
-	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8">
-</script>
-</div>
-<div style="font-size:18px;text-align:center;padding:0 0 20px 0">
-<a href="video.html">视频播放器</a><br />
-<a href="audio.html">音频播放器</a><br />
-<a href="circle.html">富有个性的环形音频播放器</a><br />
-<a href="video-playlist.html">带有播放列表的视频播放器</a><br />
-<a href="http://www.itivy.com/html5/archive/2012/1/8/html5-jplayer.html" target="_blank"><<返回文章《一款非常强悍的HTML5视频和音频播放器jPlayer》</a>
-</div>
-<!-- JiaThis Button END -->
-<div id="adsense" style="width:730px;margin:10px auto">
-<script type="text/javascript">
-<
-!--
-google_ad_client = "ca-pub-0107013120141921";
-/* demo页面横幅广告 */
-google_ad_slot = "4192399144";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-
-</script>
-</div>
-<div style="display: none">
-    <script language="javascript" type="text/javascript" src="http://js.users.51.la/4473358.js">
-</script>
-    <script type="text/javascript">
-
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fadd0db9dee36c7a9b64141788e26de72' type='text/javascript'%3E%3C/script%3E"));
-
-</script>
-
-    <script type="text/javascript">
 
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-21395429-1']);
-_gaq.push(['_trackPageview']);
 
-(function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();
+    
 
-</script>
-    </div>
+
 </body>
+
 
 </html>

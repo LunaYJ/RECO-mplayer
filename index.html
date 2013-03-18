@@ -259,10 +259,14 @@ $(document).ready(function() {
     $(".jp-repeatone").click(function(){
 		$(this).css('display','none');
 		$(".jp-repeatone-off").css('display','block');
+		//$(".jp-repeat-off").addClass('gray');
+		//$(".jp-repeat").css('display','block');
+		$(".jp-repeat-off").css('display','none');
 		var r = $(".jp-repeat").css('display');
 		if(r == 'block'){
-		$(".jp-repeat").click();}else{$(".jp-repeat-off").click();$(".jp-repeat").click();};
+			$(".jp-repeat").click();}else{$(".jp-repeat-off").click();$(".jp-repeat").click();};
 	});
+	
     $(myPlaylist.cssSelector.jPlayer).bind($.jPlayer.event.repeat + ".jPlayer", function(event) {
     var d = $(".jp-repeatone").css('display');
 	 if(event.jPlayer.options.loop && d == "none") {
@@ -273,6 +277,12 @@ $(document).ready(function() {
 	  } else {
 		$(this).unbind(".jPlayerRepeat");
 	  }
+	});
+	$(".jp-repeatone-off").click(function(){
+		$(this).css('display','none')
+		$(".jp-repeatone").css('display','block');
+		//$(".jp-repeat-off").removeClass('gray');
+		$(".jp-repeat-off").click();
 	});
 	
 	/*
@@ -360,11 +370,7 @@ $(function(){
 	//窗口尺寸 end
 	
 
-	$(".jp-repeatone-off").click(function(){
-		$(this).css('display','none')
-		$(".jp-repeatone").css('display','block');
-		$(".jp-repeat-off").click();
-	});
+	
 })
 </script>
 <script type="text/javascript" language="javascript">

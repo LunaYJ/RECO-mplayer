@@ -1015,3 +1015,10 @@ ul.jp-toggles li a.jp-repeatone-off {
 	 position:absolute; 
 	
 }
+.gray {
+	background: url("../images/bg.png") no-repeat scroll -34px -41px transparent;
+	height: 15px;
+    left: 63px;
+    top: 22px;
+    width: 17px;
+}
